@@ -4,6 +4,8 @@ function updateCard(city) {
     let data = getWeatherPromise(city);
     data.then(result => {
         if (result) {
+            city = city[0].toUpperCase() + city.slice(1)
+            console.log(city)
             divCityName.textContent = city;
             divTemp.textContent = `Temperature: ${result.temp} °C`;
             divOther1.textContent = `Max temp: ${result.temp_max}`;
